@@ -57,7 +57,7 @@ def juego_con_palabras(): # Función principal
 
         for i, conjunto in enumerate(conjuntos):
             # Se establece las respuestas correctas para cada lista "conjunto" de la lista "conjuntos"
-            os.stem('cls' if os.name == 'nt' else 'clear') # Se limpia la consola
+            os.system('cls' if os.name == 'nt' else 'clear') # Se limpia la consola
             imprimir_nombre_del_juego()
             print(f"\n¡ESTABLECE LAS RESPUESTAS CORRECTAS!") 
             # Se permutan los elementos (palabras) de cada lista "conjunto"
@@ -131,8 +131,6 @@ def juego_con_palabras(): # Función principal
                 print("\n   Incorrecto :(") # De lo contrario, se imprimirá desacierto y no se sumará nada
                 time.sleep(2)
 
-        resultado = calcular_puntuacion(aciertos, n) # Finalmente, se calculará la puntuación
-
         os.system('cls' if os.name == 'nt' else 'clear')  # Se limpia la consola
 
         imprimir_nombre_del_juego()
@@ -141,7 +139,19 @@ def juego_con_palabras(): # Función principal
         centrar_texto_en_pantalla("RESULTADOS") # Se imprimen los resultados
         print("\n")
         centrar_texto_en_pantalla(f"Puntuación final: {aciertos}/{n}") # Se imprime la puntuación final
-        centrar_texto_en_pantalla(resultado) # Se imprime mensaje 
+        
+        if aciertos < n / 2: # Si se acertó menos de la mitad del total de preguntas (número de conjuntos)
+            centrar_texto_en_pantalla("A seguir estudiando!")
+            print("\n")
+        elif aciertos == n / 2: # Si se acertó la mitad del total de preguntas (número de conjuntos)
+            centrar_texto_en_pantalla("¡Casi lo logras!")
+            print("\n")
+        elif aciertos > n / 2 and aciertos < n: # Si se acertó más de la mitad del total de preguntas (número de conjuntos)
+            centrar_texto_en_pantalla("¡Bien hecho!")
+            print("\n")
+        elif aciertos == n: # Si se acertaron todas las preguntas (número de conjuntos)
+            centrar_texto_en_pantalla("¡Excelente!")
+            print("\n")
 
         while True: # Se le pregunta al jugador si desea volver a jugar o salir
             eleccion = input("\n¿Desea volver a jugar? (Sí/No): ").strip().lower()
@@ -153,20 +163,6 @@ def juego_con_palabras(): # Función principal
                 sys.exit(0) # Salir del programa
             else:
                 print("\nOpción inválida. Por favor, ingrese 'Sí' o 'No'.")
-
-def calcular_puntuacion(aciertos, n):
-    if aciertos < n / 2: # Si se acertó menos de la mitad del total de preguntas (número de conjuntos)
-        centrar_texto_en_pantalla("A seguir estudiando!")
-        print("\n")
-    elif aciertos == n / 2: # Si se acertó la mitad del total de preguntas (número de conjuntos)
-        centrar_texto_en_pantalla("¡Casi lo logras!")
-        print("\n")
-    elif aciertos > n / 2 and aciertos < n: # Si se acertó más de la mitad del total de preguntas (número de conjuntos)
-        centrar_texto_en_pantalla("¡Bien hecho!")
-        print("\n")
-    elif aciertos == n: # Si se acertaron todas las preguntas (número de conjuntos)
-        centrar_texto_en_pantalla("¡Excelente!")
-        print("\n")
 
 if __name__ == "__main__": # Lanza el main
     juego_con_palabras()
