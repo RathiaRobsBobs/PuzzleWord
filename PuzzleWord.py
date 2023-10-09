@@ -5,7 +5,7 @@
 # terminal interactiva. Se recomienda ejecutar este programa en un entorno local de Python.
 
 # NOTA PARA MI:
-# Añadir funcionalidades
+# Añadir funcionalidades hola
 # - Que se muestres los aciertos y erores del jugador al final con los resultados
 
 import itertools # Se utilizará para realizar las permutaciones
