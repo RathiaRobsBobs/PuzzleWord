@@ -49,7 +49,7 @@ La meta principal es mejorar la habilidad de los usuarios para construir oracion
 
 Este programa utiliza funcionalidades específicas de la terminal interactiva, como: **`os.system('cls'  if os.name == 'nt'  else  'clear')`**, para limpiar la pantalla de la terminal antes de mostrar la siguiente salida. Por lo que no se ejecutará correctamente en Google Colab u otros entornos que carezcan de una terminal interactiva. Se recomienda ejecutar este programa en un entorno local de Python.
 
-<img width="826" alt="image" src="https://github.com/RathiaRobsBobs/PuzzleWord/assets/124403825/5ecdd4d0-881d-4083-8a28-bc3cea5c789c">
+<img width="826" alt="image" src="Vista previa.png">
 
 
 
