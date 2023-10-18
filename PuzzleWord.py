@@ -42,7 +42,7 @@ def menu_principal(): # Muestra el menú principal del juego
         centrar_texto_en_pantalla("|    Hosting   |       Jugador   |         Salir       |")
         centrar_texto_en_pantalla("|              ╰───╮             ╰───╮                 |")
         centrar_texto_en_pantalla("|    ╭─────╮       ╰─────╮     ╭─────╯     ╭─────╮     |")
-        centrar_texto_en_pantalla("     |     |       |     |     |     |     |     |     |")
+        centrar_texto_en_pantalla("|    |     |       |     |     |     |     |     |     |")
         centrar_texto_en_pantalla("╰────╯     ╰───────╯     ╰─────╯     ╰─────╯     ╰─────╯")
 
         # Se le solicita al usuario el número correspondiente a su rol
